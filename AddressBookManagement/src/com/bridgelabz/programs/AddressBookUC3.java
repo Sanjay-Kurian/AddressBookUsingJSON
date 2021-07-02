@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class AddressBookUC2 {
+public class AddressBookUC3 {
 	public static void main(String[] args) {
 		JSONObject contact1 = new JSONObject();
 		contact1.put("FirstName", "Abhishek");
@@ -59,7 +59,18 @@ public class AddressBookUC2 {
 			
 			JSONArray contactArray1 = (JSONArray) obj;
 			System.out.println(contactArray1);
+			System.out.println("-------Before deletion--------");
+			for (Object element : contactArray1) {
+				JSONObject jsonObject = (JSONObject) element;
+				System.out.println("=====================::"+jsonObject.get("contact"));
 
+				JSONObject jsonObject1 = (JSONObject) jsonObject.get("contact");
+				String name = (String) jsonObject1.get("FirstName");
+				System.out.println("=====================::"+name);
+
+			}
+			System.out.println("-------After deletion----------");
+			contactArray1.remove(0);
 			for (Object element : contactArray1) {
 				JSONObject jsonObject = (JSONObject) element;
 				System.out.println("=====================::"+jsonObject.get("contact"));
