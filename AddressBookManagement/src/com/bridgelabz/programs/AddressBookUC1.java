@@ -49,15 +49,12 @@ public class AddressBookUC1 {
 
 			for (Object element : contactArray1) {
 				JSONObject jsonObject = (JSONObject) element;
-
-
 				System.out.println("=====================::"+jsonObject.get("contact"));
 
 				JSONObject jsonObject1 = (JSONObject) jsonObject.get("contact");
 				String name = (String) jsonObject1.get("FirstName");
 
 				System.out.println("=====================::"+name);
-
 			}
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
